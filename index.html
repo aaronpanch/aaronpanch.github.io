@@ -2,15 +2,27 @@
 <html>
   <head>
     <title>Home | Aaron Panchal</title>
-    <link href="http://fonts.googleapis.com/css?family=Gentium+Book+Basic|Montserrat:700|Playfair+Display:900" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Gentium+Book+Basic|Montserrat:700|Playfair+Display:900,700italic" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <section class="grid grid--v-centered grid--h-centered">
-      <div class="cover"><svg height="100%" width="100%" id="tiles"></svg></div> 
+    <section>
+      <div class="book">
+        <div class="contents grid grid--v-centered">
+          <div class="grid__item">
+						<h1 class="title">Aaron</h1>
+						<h2 class="subtitle">Panchal</h2>
+					</div>
+        </div>
+        <div class="cover"><svg height="100%" width="100%" id="tiles"></svg></div>
+      </div>
     </section>
     <script src="vendor/snap.svg.js"></script>
     <script>
+			window.onload = function() {
+				document.querySelectorAll('.book')[0].className += ' is-open';
+			}
+		
       var paper = Snap('#tiles');
       var masterColors = [
         'rgb(0,78,27)',
