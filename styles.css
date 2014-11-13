@@ -1,5 +1,5 @@
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *, *:before, *:after {
@@ -8,7 +8,7 @@ html {
 
 html, body {
   height: 100%;
-	overflow: hidden;
+  overflow: hidden;
 }
 
 body {
@@ -50,32 +50,32 @@ section {
 }*/
 
 .title {
-	font-family: 'Playfair Display', serif;
-	font-size: 6em;
-	font-weight: 900;
-	line-height: 1;
-	margin: 0;
-	text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 6em;
+  font-weight: 900;
+  line-height: 1;
+  margin: 0;
+  text-align: center;
 }
 
 .subtitle {
-	font-family: 'Playfair Display', serif;
-	font-size: 3em;
-	font-style: italic;
-	margin: 0;
-	text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  font-style: italic;
+  margin: 0;
+  text-align: center;
 }
 
 .book.is-open .cover {
-  transform: translate3d(500px,0,0);
+  transform: translate3d(500px, 0, 0);
 }
 
 .book.is-open .contents {
-  transform: translate3d(-200px,0,0);
+  transform: translate3d(-200px, 0, 0);
 }
 
 .cover {
-  box-shadow: 0 6px 15px 1px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 15px 1px rgba(0, 0, 0, 0.4);
   border-radius: 3px;
   height: 600px;
   left: 50%;
@@ -90,16 +90,15 @@ section {
 
 .contents {
   background: #fff;
-  box-shadow: 0 6px 15px 1px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 15px 1px rgba(0, 0, 0, 0.4);
   border-radius: 3px;
   height: 580px;
   left: 50%;
   margin-left: -410px;
   margin-top: -290px;
-	padding: 4rem;
+  padding: 4rem;
   position: absolute;
   top: 50%;
   transition: transform 0.3s ease-in-out 0.2s;
   width: 820px;
 }
-
