@@ -1,0 +1,14 @@
+{
+  "name": "aaronpanch.github.io",
+  "version": "0.0.1",
+  "description": "My Personal Website!",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aaronpanch/aaronpanch.github.io.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-postcss": "^3.0.0",
+    "autoprefixer-core": "^3.1.2"
+  }
+}
