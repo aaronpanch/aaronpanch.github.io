@@ -1,28 +1,26 @@
-var gulp = require('gulp');
+const gulp = require('gulp');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cleanCSS = require('gulp-clean-css');
+const browserSync = require('browser-sync').create();
 
-var destinationDir = './build/';
+const destinationDir = './build/';
 
-gulp.task('autoprefixer', function() {
-  var postcss = require('gulp-postcss');
-  var autoprefixer = require('autoprefixer-core');
+gulp.task('serve', ['styles'], function() {
+  browserSync.init({
+    server: { baseDir: "./" }
+  });
 
+  gulp.watch('./styles.css', [ 'styles' ]);
+  gulp.watch("./index.html").on('change', browserSync.reload);
+});
+
+gulp.task('styles', function() {
   return gulp.src('styles.css')
-    .pipe(postcss([ autoprefixer({ browsers: ['last 2 version'] }) ]))
-    .pipe(gulp.dest(destinationDir));
+    .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+    .pipe(cleanCSS())
+    .pipe(gulp.dest(destinationDir))
+    .pipe(browserSync.stream());
 });
 
-gulp.task('minify', function() {
-  var minifyCSS = require('gulp-minify-css');
-  var rename = require('gulp-rename');
-
-  return gulp.src('./build/styles.css')
-    .pipe(minifyCSS())
-    .pipe(rename('styles.min.css'))
-    .pipe(gulp.dest(destinationDir));
-});
-
-gulp.task('watch', function() {
-  gulp.watch('./*.css', ['autoprefixer', 'minify']);
-});
-
-gulp.task('default', ['autoprefixer', 'minify', 'watch']);
+gulp.task('default', ['serve']);
