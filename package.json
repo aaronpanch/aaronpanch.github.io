@@ -7,10 +7,9 @@
     "url": "https://github.com/aaronpanch/aaronpanch.github.io.git"
   },
   "devDependencies": {
-    "gulp": "^3.8.10",
-    "gulp-postcss": "^3.0.0",
-    "autoprefixer-core": "^3.1.2",
-    "gulp-minify-css": "^0.3.11",
-    "gulp-rename": "^1.2.0"
+    "autoprefixer": "^6.3.6",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-postcss": "^6.1.1"
   }
 }
