@@ -74,10 +74,13 @@ p, li {
   line-height: 1.5;
   letter-spacing: 0.0075em;
   margin: 0 0 1rem;
-  text-align: justify;
 }
 
-section p:first-of-type:first-letter {
+a {
+  color: inherit;
+}
+
+p.dropcap:first-letter {
   float: left;
   font-size: 75px;
   line-height: 60px;
