@@ -31,17 +31,15 @@ html {
 .scene {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   height: 100vh;
   overflow: hidden;
 }
 
+
 .scene__text {
   flex: 1;
   padding: 2rem;
-}
-
-.scene--swapped .scene__text {
-  order: 1;
 }
 
 .scene__photo {
@@ -53,6 +51,24 @@ html {
   justify-content: center;
   max-width: 65vw;
   padding: 3rem;
+}
+
+@media screen and (max-width: 700px) {
+  .scene {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .scene__text, .scene__photo {
+    flex-basis: 100%;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: 701px) {
+  .scene--swapped-large .scene__text {
+    order: 1;
+  }
 }
 
 .photo {
@@ -80,7 +96,7 @@ a {
   color: inherit;
 }
 
-p.dropcap:first-letter {
+.dropcap:first-letter {
   float: left;
   font-size: 75px;
   line-height: 60px;
