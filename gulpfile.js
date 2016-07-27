@@ -11,8 +11,9 @@ gulp.task('serve', ['styles', 'minify'], function() {
     server: { baseDir: "./" }
   });
 
-  gulp.watch('./src/styles.css', ['styles']);
-  gulp.watch('./src/index.html', ['minify'], browserSync.reload);
+  gulp.watch('src/styles.css', ['styles']);
+  gulp.watch('src/index.html', ['minify']);
+  gulp.watch('./index.html', browserSync.reload);
 });
 
 gulp.task('minify', function() {
