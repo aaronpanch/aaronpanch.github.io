@@ -1,8 +1,8 @@
-const gulp = require('gulp');
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const cleanCSS = require('gulp-clean-css');
-const browserSync = require('browser-sync').create();
+const gulp = require('gulp')
+    , postcss = require('gulp-postcss')
+    , autoprefixer = require('autoprefixer')
+    , cleanCSS = require('gulp-clean-css')
+    , browserSync = require('browser-sync').create();
 
 const destinationDir = './build/';
 
