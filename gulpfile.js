@@ -2,6 +2,7 @@ const gulp = require('gulp')
     , postcss = require('gulp-postcss')
     , autoprefixer = require('autoprefixer')
     , cleanCSS = require('gulp-clean-css')
+    , rename = require('gulp-rename')
     , browserSync = require('browser-sync').create();
 
 const destinationDir = './build/';
@@ -19,6 +20,7 @@ gulp.task('styles', function() {
   return gulp.src('styles.css')
     .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
     .pipe(cleanCSS())
+    .pipe(rename('styles.min.css'))
     .pipe(gulp.dest(destinationDir))
     .pipe(browserSync.stream());
 });
