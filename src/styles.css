@@ -2,7 +2,7 @@ html {
   background: #121212;
   box-sizing: border-box;
   color: #fff;
-  font-family: "futura-pt", sans-serif;
+  font-family: "brandon-grotesque", sans-serif;
   font-kerning: normal;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -12,98 +12,33 @@ html {
   box-sizing: inherit;
 }
 
-.name-logo {
-  fill: none;
-  stroke: #fff;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 14px;
-  fill-rule: evenodd;
-}
-
-.logo-container {
-  margin: 2rem auto;
-  max-width: 300px;
-  overflow: hidden;
-}
-
 .scene {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
   height: 100vh;
   overflow: hidden;
 }
 
-
-.scene__text {
-  flex: 1;
+.title-scene {
+  background: url(https://s3-us-west-2.amazonaws.com/aaronpanch/images/hancock_tower_extended.jpg) 60% top;
+  background-size: cover;
   padding: 2rem;
 }
 
-.scene__photo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  flex: 1;
-  justify-content: center;
-  max-width: 65vw;
-  padding: 3rem;
+.site-title {
+  color: #f9886c;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.8em;
+  text-transform: uppercase;
+}
+
+.site-tag {
+  color: #333;
+  max-width: 55%;
 }
 
 @media screen and (max-width: 700px) {
-  .scene {
-    height: auto;
-    min-height: 100vh;
+  .site-title {
+    font-size: 35px;
   }
-
-  .scene__text, .scene__photo {
-    flex-basis: 100%;
-    max-width: none;
-  }
-}
-
-@media screen and (min-width: 701px) {
-  .scene--swapped-large .scene__text {
-    order: 1;
-  }
-}
-
-.photo {
-  max-height: 100%;
-  max-width: 100%;
-}
-
-h1 {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  font-size: 50px;
-  color: #999;
-  margin-bottom: 0.8em;
-  /*color: #FCD00D;*/
-}
-
-p, li {
-  line-height: 1.5;
-  letter-spacing: 0.0075em;
-  margin: 0 0 1rem;
-}
-
-a {
-  color: inherit;
-}
-
-.dropcap:first-letter {
-  float: left;
-  font-size: 75px;
-  line-height: 60px;
-  padding-top: 4px;
-  padding-right: 8px;
-}
-
-ul {
-  list-style: none;
-  padding-left: 1rem;
 }
