@@ -17,6 +17,12 @@ h1, p {
   transition: opacity 0.3s;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .wf-active h1, .wf-active p {
   opacity: 1;
 }
