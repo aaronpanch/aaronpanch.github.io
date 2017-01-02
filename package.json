@@ -8,7 +8,8 @@
     "url": "https://github.com/aaronpanch/aaronpanch.github.io.git"
   },
   "scripts": {
-    "start" : "webpack-dev-server"
+    "start" : "webpack-dev-server",
+    "build": "webpack --config ./webpack.prod.config.js"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
