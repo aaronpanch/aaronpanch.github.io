@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start" : "webpack-dev-server",
-    "build": "webpack --config ./webpack.prod.config.js"
+    "build": "webpack --config ./webpack.prod.config.js",
+    "clean": "rm dist/app.js; rm dist/index.html"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
