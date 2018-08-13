@@ -2,23 +2,15 @@ html {
   /*background: #121212;*/
   box-sizing: border-box;
   color: #333;
-  font-family: "brandon-grotesque", sans-serif;
   font-kerning: normal;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
-}
-
-h1, p {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.wf-active h1, .wf-active p {
-  opacity: 1;
 }
 
 .scene {
@@ -28,8 +20,9 @@ h1, p {
 }
 
 .title-scene {
-  background: url(https://s3-us-west-2.amazonaws.com/aaronpanch/images/hancock_tower_extended.jpg) 60% top,
-              #f0f0f0;
+  background: url(https://s3-us-west-2.amazonaws.com/aaronpanch/images/hancock_tower_extended.jpg)
+      60% top,
+    #f0f0f0;
   background-size: cover;
 }
 
