@@ -3,11 +3,13 @@ const gulp = require('gulp'),
   autoprefixer = require('autoprefixer'),
   cleanCSS = require('gulp-clean-css'),
   htmlmin = require('gulp-htmlmin'),
+  inlineSource = require('gulp-inline-source'),
   browserSync = require('browser-sync').create();
 
 gulp.task('minify', function() {
   return gulp
     .src('src/*.html')
+    .pipe(inlineSource())
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('.'));
 });
