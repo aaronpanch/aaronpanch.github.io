@@ -13,65 +13,16 @@ html {
   box-sizing: inherit;
 }
 
-.scene {
-  min-height: 100vh;
-  overflow: hidden;
-  padding: 2rem;
-}
-
-.title-scene {
-  background: url(https://s3-us-west-2.amazonaws.com/aaronpanch/images/hancock_tower_extended.jpg)
-      60% top,
-    #f0f0f0;
-  background-size: cover;
-}
-
-.site-title {
-  color: #f9886c;
-  font-size: 50px;
-}
-
-.site-tag {
-  color: #333;
-  max-width: 55%;
-}
-
-@media screen and (max-width: 700px) {
-  .site-title {
-    font-size: 35px;
-  }
-}
-
-a {
-  color: inherit;
-}
-
-p {
-  line-height: 1.5;
-  letter-spacing: 0.0075em;
-  margin: 0 0 1rem;
-}
-
-.dropcap:first-letter {
-  float: left;
-  font-weight: 700;
-  font-size: 75px;
-  line-height: 60px;
-  padding-top: 4px;
-  padding-right: 8px;
-  color: #f9886c;
+body {
+  margin: 0;
 }
 
 .title {
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  margin-bottom: 0.8em;
-  text-transform: uppercase;
+  margin: 4rem 1rem;
+  text-align: center;
 }
 
-.flexed {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+.logo {
+  width: 100%;
+  max-width: 350px;
 }
