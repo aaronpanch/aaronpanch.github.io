@@ -1,38 +1,38 @@
-const gulp = require('gulp'),
-  postcss = require('gulp-postcss'),
-  autoprefixer = require('autoprefixer'),
-  cleanCSS = require('gulp-clean-css'),
-  htmlmin = require('gulp-htmlmin'),
-  inlineSource = require('gulp-inline-source'),
-  browserSync = require('browser-sync').create();
+const gulp = require("gulp");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const cleanCSS = require("gulp-clean-css");
+const htmlmin = require("gulp-htmlmin");
+const inlineSource = require("gulp-inline-source");
+const browserSync = require("browser-sync").create();
 
-gulp.task('minify', function() {
-  return gulp
-    .src('src/*.html')
+const minify = () =>
+  gulp
+    .src("src/*.html")
     .pipe(inlineSource())
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('.'));
-});
+    .pipe(gulp.dest("."));
 
-gulp.task('styles', function() {
-  return gulp
-    .src('src/styles.css')
-    .pipe(postcss([autoprefixer({ browsers: ['last 2 versions'] })]))
+const styles = () =>
+  gulp
+    .src("src/styles.css")
+    .pipe(postcss([autoprefixer({ browsers: ["last 2 versions"] })]))
     .pipe(cleanCSS())
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest("."))
     .pipe(browserSync.stream());
-});
 
-gulp.task('build', ['styles', 'minify']);
+const build = gulp.parallel(styles, minify);
 
-gulp.task('serve', ['styles', 'minify'], function() {
+const watchAndServe = () => {
   browserSync.init({
-    server: { baseDir: './' }
+    server: { baseDir: "./" }
   });
 
-  gulp.watch('src/styles.css', ['styles', 'minify']);
-  gulp.watch('src/index.html', ['minify']);
-  gulp.watch('./index.html', browserSync.reload);
-});
+  gulp.watch("src/styles.css", gulp.parallel(styles, minify));
+  gulp.watch("src/index.html", minify);
+  gulp.watch("./index.html", browserSync.reload);
+};
 
-gulp.task('default', ['build']);
+exports.serve = gulp.series(gulp.parallel(styles, minify), watchAndServe);
+exports.build = build;
+exports.default = build;
